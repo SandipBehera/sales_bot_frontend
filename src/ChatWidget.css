@@ -1,0 +1,117 @@
+.chat-widget {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 350px;
+  max-height: 600px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  z-index: 9999;
+}
+
+.chat-header {
+  background-color: #00426b;
+  color: #ffffff;
+  padding: 16px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.chat-messages {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 12px;
+  overflow-y: auto;
+  background-color: #f9f9f9;
+  min-height: 250px;
+  max-height: 400px;
+}
+
+/* Common style for all messages */
+.chat-msg {
+  padding: 10px 14px;
+  border-radius: 16px;
+  max-width: 75%;
+  font-size: 14px;
+  line-height: 1.4;
+  word-wrap: break-word;
+  display: inline-block;
+}
+
+/* Bot message - left aligned */
+.chat-msg.bot {
+  background-color: #e6f0ff;
+  color: #000;
+  align-self: flex-start;
+  border-top-left-radius: 0;
+}
+
+/* User message - right aligned */
+.chat-msg.user {
+  background-color: #0078d4;
+  color: #fff;
+  align-self: flex-end;
+  text-align: right;
+  border-top-right-radius: 0;
+}
+
+
+.chat-input {
+  display: flex;
+  border-top: 1px solid #ddd;
+  padding: 10px;
+  background-color: #ffffff;
+}
+
+.chat-input input {
+  flex: 1;
+  padding: 10px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  outline: none;
+  font-size: 14px;
+}
+
+.chat-input button {
+  margin-left: 10px;
+  background-color: #00426b;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.chat-input button:hover {
+  background-color: #005a92;
+}
+.minimize-btn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+}
+/* When minimized */
+.chat-widget.minimized .chat-messages,
+.chat-widget.minimized .chat-input {
+  display: none;
+}
+
+.chat-minimized-label {
+  padding: 10px;
+  text-align: center;
+  font-weight: 500;
+  background-color: #f4f4f4;
+}
