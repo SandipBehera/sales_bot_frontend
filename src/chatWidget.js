@@ -28,7 +28,7 @@ const ChatWidget = () => {
     const fetchSession = async () => {
         setLoading(true);
         try {
-      const res = await fetch("http://ec2-52-63-37-164.ap-southeast-2.compute.amazonaws.com:8000/chat", {
+      const res = await fetch("https://chat.msnone-neopolis.com/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ query, session_id: sessionId }),
@@ -63,7 +63,7 @@ const ChatWidget = () => {
     setLoading(true); // show typing
 
     try {
-      const res = await fetch("http://ec2-52-63-37-164.ap-southeast-2.compute.amazonaws.com:8000/chat", {
+      const res = await fetch("https://chat.msnone-neopolis.com/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ query, session_id: sessionId }),
